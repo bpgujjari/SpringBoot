@@ -1,0 +1,27 @@
+package com.ipl.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ipl.entity.IPLPointsTable;
+import com.ipl.repo.IplRepo;
+@Service
+public class IplServImp  implements IplServ{
+
+	@Autowired
+	private IplRepo repo;
+	@Override
+	public void saveTeam() {
+	IPLPointsTable p=new IPLPointsTable();
+	p.setTeam("PBKS");
+	p.setLoss(0);
+	p.setNoResult(0);
+	p.setNrr(0);
+	p.setPlayed(0);
+	p.setPosition(0);
+	p.setWin(0);
+	p.setPoints(0);
+	repo.save(p);
+	}
+
+}

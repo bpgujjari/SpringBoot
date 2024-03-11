@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+    http://www.springframework.org/schema/aop   
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">  
+<bean class="com.yakub.MarginBean" id="id1">
+<property name="mrgId" value="101"/>
+<property name="mrgCode" value="H1A5G"/>
+</bean>   
+
+
+<bean class="com.yakub.ModelBean" id="id2">
+<property name="modelId" value="120"/>
+<property name="modelCode" value="AIADC1512IO"/>
+<property name="modelCost"  value="90890.00" />
+<property  name="mb"  ref="id1"/>
+</bean>
+
+
+<bean class="com.yakub.ProductBean" id="id3">
+<property name="pId" value="89"/>
+<property name="pName" value="Dell-Laptop"/>
+<property  name="obj"  ref="id2"/>
+</bean>
+
+        
+</beans>  

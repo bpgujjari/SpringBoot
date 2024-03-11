@@ -1,0 +1,13 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags/form" %>
+<center>
+<c:form method="post" action="/register" modelAttribute="product">
+Customer Id        :<c:input path="cid"/><br><br>
+Customer Name      :<c:input path="cname"/><br><br>
+Mobile number      :<c:input path="mobile"/><br><br>
+Product Name       :<c:input path="pname"/><br><br>
+Price              :<c:input path="price"/><br><br>
+Quantity           :<c:input path="quantity"/><br><br>
+
+<input type="submit" value="AddProduct"><br><br>
+</center>
+</c:form>

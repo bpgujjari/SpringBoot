@@ -1,0 +1,16 @@
+package com.dao;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class StudentBean {
+private JdbcTemplate jt;
+
+public StudentBean() {
+	super();
+}
+public void setJt(JdbcTemplate jt) {
+	this.jt = jt;
+}
+
+
+}

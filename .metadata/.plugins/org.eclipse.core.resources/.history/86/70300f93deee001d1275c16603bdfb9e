@@ -1,0 +1,5 @@
+<center>
+<h1 style="color:green;">DAta inserted successfully....</h1>
+<a href="/addproduct">AddProduct</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/viewproduct">ViewUsers</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</center>

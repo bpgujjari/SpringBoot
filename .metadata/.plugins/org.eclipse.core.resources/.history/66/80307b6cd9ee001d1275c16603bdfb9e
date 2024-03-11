@@ -1,0 +1,99 @@
+package com.web.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.web.model.Product;
+import com.web.repo.ProductRepo;
+@Service
+public class ProductServiceImp implements ProductService{
+	
+	@Autowired
+	private ProductRepo repo;
+
+	@Override
+	public Product saveProduct(Product product) {
+		double total=product.getPrice()*product.getQuantity();
+		product.setTotal(total);
+		double gst1=(total*17)/100;
+		double discount=0.0;
+		if(product.getTotal()<2500)
+		{
+			discount=(product.getTotal()*10)/100;
+		}
+		else if(product.getTotal()>=2500&&product.getTotal()<5000)
+		{
+			discount=(product.getTotal()*15)/100;
+		}
+		else if(product.getTotal()>=5000)
+		{
+			discount=(product.getTotal()*30)/100;
+		}
+		
+		double invoice=product.getTotal()-discount+gst1;
+		
+		
+		product.setDisc(discount);
+		product.setGst(gst1);
+		product.setInvoice(invoice);
+				
+		Product pd=	repo.save(product);
+			
+		return pd;
+	}
+
+	@Override
+	public List<Product> getAllProduct() {
+		List<Product> products=(List<Product>) repo.findAll();
+		return products;
+	}
+	@Override
+	public void deleteProduct(Integer id) {
+		Product pd= repo.findById(id).get();
+		repo.deleteById(id);
+	}
+	
+	@Override
+	public Product getProduct(Integer id) {
+		Product pro=repo.findById(id).get();
+		return pro;
+	}
+
+	@Override
+	public Product updateProduct(Product product) {
+		double total=product.getPrice()*product.getQuantity();
+		product.setTotal(total);
+		double gst1=(total*17)/100;
+		double discount=0.0;
+		if(product.getTotal()<2500)
+		{
+			discount=(product.getTotal()*10)/100;
+		}
+		else if(product.getTotal()>=2500&&product.getTotal()<5000)
+		{
+			discount=(product.getTotal()*15)/100;
+		}
+		else if(product.getTotal()>=5000)
+		{
+			discount=(product.getTotal()*30)/100;
+		}
+		
+		double invoice=product.getTotal()-discount+gst1;
+		
+		
+		product.setDisc(discount);
+		product.setGst(gst1);
+		product.setInvoice(invoice);
+				
+		Product pd=	repo.save(product);
+			
+		return pd;
+	}
+	
+
+	
+	
+
+}

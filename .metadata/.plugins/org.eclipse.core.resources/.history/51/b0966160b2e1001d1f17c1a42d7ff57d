@@ -1,0 +1,13 @@
+package com.web.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.web.repository.EmployeeRepo;
+
+@Controller
+public class EmployeeController {
+	@Autowired
+	private EmployeeRepo repo;
+
+}

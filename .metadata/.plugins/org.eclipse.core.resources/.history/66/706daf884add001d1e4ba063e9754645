@@ -1,0 +1,5 @@
+myname  ...${users.name}<p></p>
+password...${users.password}<p></p>
+email...${users.email}<p></p>
+gender...${users.gender}<p></p>
+address...${users.address}

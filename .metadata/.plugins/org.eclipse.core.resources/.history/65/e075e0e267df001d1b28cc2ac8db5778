@@ -1,0 +1,23 @@
+package com.jpa;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+public class Employee {
+@Column(name="id")
+private int empId;
+@Column(name="name")
+private String empName;
+@Column(name="password")
+private String empPassword;
+@Column(name="email")
+private String empEmail;
+@Column(name="company")
+private String empCompany;
+@Column(name="designation")
+private String empDesignation;
+@Column(name="salary")
+private double empSalary;
+private long mobile;
+}

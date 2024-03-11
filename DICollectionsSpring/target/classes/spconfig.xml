@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+    http://www.springframework.org/schema/aop   
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">  
+<bean class="com.yakub.SathyaCollegeBean" id="id1">
+<property name="stdNames">
+<list>
+<value> Chimtu </value>
+<value> Bro </value>
+<value> Model </value>
+</list>
+</property>
+<property name="stdRoll">
+<set>
+<value> 101 </value>
+<value> 102 </value>
+<value> 103 </value>
+</set>
+</property>
+
+<property name="branchDetails">
+<map>
+<entry  key="MECH" value="150"/>
+<entry  key="CSE" value="160"/>
+<entry  key="EEE" value="170"/>
+</map>
+</property>
+
+
+
+<property name="branchInfo">
+<props>
+<prop key="EcE">Kannababu</prop>
+<prop key="CSE">Ratan</prop>
+<prop key="EEE">Yakoob</prop>
+
+</props>
+
+</property>
+
+
+</bean>              
+</beans>  

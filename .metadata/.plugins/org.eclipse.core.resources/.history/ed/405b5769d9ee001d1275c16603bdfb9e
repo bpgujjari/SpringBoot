@@ -1,0 +1,15 @@
+package com.web.service;
+
+import java.util.List;
+
+import com.web.model.Product;
+
+public interface ProductService {
+
+	public Product saveProduct(Product product);
+	public Product getProduct(Integer id);
+	public List<Product> getAllProduct();
+	public Product updateProduct(Product product);
+	public void deleteProduct(Integer id);	
+	
+}

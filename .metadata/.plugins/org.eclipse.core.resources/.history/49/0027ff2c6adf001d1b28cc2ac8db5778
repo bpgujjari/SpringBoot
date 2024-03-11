@@ -1,0 +1,29 @@
+package com.jpa;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application  implements CommandLineRunner{
+
+	
+	@Autowired
+	private EmployeeRepo repo;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+	Employee e= new Employee(1, "chimtu", "emp11", "chimtu@222", "tcs", "dev", 35000.0, 6281672);
+	repo.save(e);
+		 
+		 
+	}
+
+
+}

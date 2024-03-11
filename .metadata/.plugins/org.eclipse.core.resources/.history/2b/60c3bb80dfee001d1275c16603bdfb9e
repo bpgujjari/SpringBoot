@@ -1,0 +1,43 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<center>
+
+<table border="1" cellspacing="1" cellpadding="9">
+
+<tr>
+<th>CUSTOMER ID</th>
+<th>CUSTOMER NAME</th>
+<th>MOBILE</th>
+<th>PRODUCT NAME</th>
+<th>PRICE</th>
+<th>QUANTITY</th>
+<th>TOTAL</th>
+<th>DISCOUNT</th>
+<th>GST</th>
+<th>INVOICE</th>
+<th>EDIT</th><th>DELETE</th>	
+
+
+
+</tr>
+
+<c:forEach var="product" items="${products}">
+<tr>
+<td>${product.cid}</td>
+<td>${product.cname}</td>
+<td>${product.mobile}</td>
+<td>${product.pname}</td>
+<td>${product.price}</td>
+<td>${product.quantity}</td>
+<td>${product.total}</td>
+<td>${product.disc}</td>
+<td>${product.gst}</td>
+<td>${product.invoice}</td>
+<td><a href="/editproduct/${product.cid}">edit</a></td>
+<td><a href="/delete/${product.cid}">delete</a></td>
+</tr>
+</c:forEach>
+</table>
+
+
+</center>

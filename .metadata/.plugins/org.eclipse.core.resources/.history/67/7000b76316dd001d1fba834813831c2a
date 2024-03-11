@@ -1,0 +1,15 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<form:form modelAttribute="user" action="/register">
+
+name<form:input path="name"/><p></p>
+password<form:password path="password"/><p></p>
+email<form:input path="email"/><p></p>
+male<form:checkbox path="gender" value="male"/>
+<p></p>
+address<form:input path="address"/><p></p>
+<input type="submit" value="Register">
+
+
+
+</form:form>

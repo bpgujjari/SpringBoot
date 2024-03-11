@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+    http://www.springframework.org/schema/aop   
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">  
+<bean class="com.bp2.Address" id="id1">
+<property name="hno" value="100"/>
+<property name="city" value="Hyd"/>
+<property name="state" value="ts"/>
+</bean> 
+
+<bean class="com.bp2.Student" id="id2">
+<property name="sid" value="100"/>
+<property name="sname" value="ChimtuBhai"/>
+<property name="addr" ref="id1"/>
+</bean>            
+</beans>  

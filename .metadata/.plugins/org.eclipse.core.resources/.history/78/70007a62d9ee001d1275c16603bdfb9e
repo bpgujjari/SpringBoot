@@ -1,0 +1,105 @@
+package com.web.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Product {
+@Id
+private int cid;
+private String cname;
+private long mobile;
+private String pname;
+private double price;
+private int quantity;
+private double total;
+private double gst;
+private double disc;
+private double invoice;
+public Product(int cid, String cname, long mobile, String pname, double price, int quantity, double total, double gst,
+		double disc, double invoice) {
+	super();
+	this.cid = cid;
+	this.cname = cname;
+	this.mobile = mobile;
+	this.pname = pname;
+	this.price = price;
+	this.quantity = quantity;
+	this.total = total;
+	this.gst = gst;
+	this.disc = disc;
+	this.invoice = invoice;
+}
+public Product() {
+	super();
+}
+public int getCid() {
+	return cid;
+}
+public void setCid(int cid) {
+	this.cid = cid;
+}
+public String getCname() {
+	return cname;
+}
+public void setCname(String cname) {
+	this.cname = cname;
+}
+public long getMobile() {
+	return mobile;
+}
+public void setMobile(long mobile) {
+	this.mobile = mobile;
+}
+public String getPname() {
+	return pname;
+}
+public void setPname(String pname) {
+	this.pname = pname;
+}
+public double getPrice() {
+	return price;
+}
+public void setPrice(double price) {
+	this.price = price;
+}
+public int getQuantity() {
+	return quantity;
+}
+public void setQuantity(int quantity) {
+	this.quantity = quantity;
+}
+public double getTotal() {
+	return total;
+}
+public void setTotal(double total) {
+	this.total = total;
+}
+public double getGst() {
+	return gst;
+}
+public void setGst(double gst) {
+	this.gst = gst;
+}
+public double getDisc() {
+	return disc;
+}
+public void setDisc(double disc) {
+	this.disc = disc;
+}
+public double getInvoice() {
+	return invoice;
+}
+public void setInvoice(double invoice) {
+	this.invoice = invoice;
+}
+@Override
+public String toString() {
+	return "Product [cid=" + cid + ", cname=" + cname + ", mobile=" + mobile + ", pname=" + pname + ", price=" + price
+			+ ", quantity=" + quantity + ", total=" + total + ", gst=" + gst + ", disc=" + disc + ", invoice=" + invoice
+			+ "]";
+}
+
+
+
+}

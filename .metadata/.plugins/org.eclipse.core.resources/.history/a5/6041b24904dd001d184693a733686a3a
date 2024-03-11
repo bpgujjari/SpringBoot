@@ -1,0 +1,22 @@
+package com.mvcForms;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class UserController {
+	@RequestMapping("/")
+	public String homePage(ModelMap model)
+	{User user=new User();
+	model.put("user", user);
+		return "reg";
+	}
+	@RequestMapping("/register")
+	public String userRegistration(@RequestAttribute User user, ModelMap model) {	
+		model.put("users", user);		
+		return "result";
+	}
+	
+}

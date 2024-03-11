@@ -1,0 +1,13 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<html>
+
+<body>
+<form:input path="name" action="/register" />
+<form:input path="password"/>
+<form:input path="email"/>
+<form:input path="gender"/>
+<form:input path="address"/>
+<input type="submit" value="Register">
+
+</body>
+</html>

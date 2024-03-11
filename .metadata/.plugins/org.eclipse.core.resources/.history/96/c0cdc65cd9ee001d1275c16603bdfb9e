@@ -1,0 +1,74 @@
+package com.web.cortroller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.web.model.Product;
+import com.web.service.ProductServiceImp;
+
+@Controller
+public class ProductController {
+	@Autowired
+	private ProductServiceImp service;
+	
+	@RequestMapping("/")
+	public String home()
+	{
+		return "home";
+	}
+	 
+	
+	@RequestMapping("/addproduct")
+	public String reg(ModelMap model)
+	{	Product product=new Product();
+		model.put("product", product);
+		return "reg";
+	}
+	
+	@RequestMapping("/register")
+	public String regForm(@ModelAttribute Product product,ModelMap model)
+	{
+		model.put("product", service.saveProduct(product));
+		
+		return "success";
+	}
+	
+	@RequestMapping("/viewproduct")
+	public String viewPage(ModelMap model,Product product)
+	{
+		model.addAttribute("products", service.getAllProduct());
+		return "view";	
+	}
+	
+	
+	@RequestMapping("/delete/{cid}")
+	public String deletePage(@PathVariable int cid,ModelMap model)
+	{
+		service.deleteProduct(cid);
+		return "redirect:/viewproduct";
+	}
+	
+	
+	@RequestMapping("/editproduct/{cid}")
+	public String editPage(@PathVariable int cid,ModelMap model,Product product)
+	{
+		model.addAttribute("product",service.getProduct(cid));
+		return "edit";
+	}
+	
+	@RequestMapping("/edit2")
+	public String editProduct(ModelMap model,Product product)
+	{
+		service.updateProduct(product);
+		return "redirect:/viewproduct";
+	}
+	
+	
+	
+	
+	
+}

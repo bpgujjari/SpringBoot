@@ -1,0 +1,24 @@
+package com.dao;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class StudentBean {
+private JdbcTemplate jt;
+
+public StudentBean() {
+	super();
+}
+public void setJt(JdbcTemplate jt) {
+	this.jt = jt;
+}
+
+
+public void createTable()
+{
+jt.execute("create table StudentBean(id number, name varchar2(20), email varchar2(25), mobile number(10))");
+System.out.println("table created successfully........");
+
+}
+
+
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+    http://www.springframework.org/schema/aop   
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd " >  
+
+<bean class="com.bp1.Spring.Address" id="id1">
+<constructor-arg value="1"/>
+<constructor-arg value="Hyderabad"/>
+<constructor-arg value="ChimtuNagar"/>
+</bean> 
+
+<bean class="com.bp1.Spring.Student" id="id2">
+<constructor-arg value="11"/>
+<constructor-arg value="ChituBolthey.."/>
+<constructor-arg ref="id1"/>
+</bean>
+</beans>
